@@ -7,7 +7,7 @@
 ## 2.1、使用如下指令克隆
 ```
 cd $GOPATH/src
-git clone https://github.com/winlion/restgo-admin.git  
+git clone https://github.com/hikerwu/restgo-admin.git  
 ```
 你将得到restgo-admin 目录  
 进入目录  
@@ -21,13 +21,15 @@ go run  main.go
 将restgo-admin.sql导入到数据库中   
 修改conf/app.properties文件24行数据库配置   
 restgo.datasource.default.dataSourceName=root:root@/restgo-admin?charset=utf8  
-数据库配置方式有如下几种,详细请自行百度  
+数据库配置方式有如下几种,详细请自行百度。       
+一定要修改一个的数据库账号。
 
 ```
 user@unix(/path/to/socket)/dbname?charset=utf8
 user:password@tcp(localhost:5555)/dbname?charset=utf8
 user:password@/dbname
 user:password@tcp([de:ad:be:ef::ca:fe]:80)/dbname
+user:12345678@/restgo-admin?charset=utf8
 ```
 ## 2.3、初始化依赖包
 使用前先使用如下指令安装指令安装文件
