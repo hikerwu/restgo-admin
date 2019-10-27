@@ -1,8 +1,8 @@
 # 1、首先上效果
-![登录页面](https://github.com/winlion/restgo-admin/blob/master/asset/images/1.png)
-![登入首页](https://github.com/winlion/restgo-admin/blob/master/asset/images/2.png)
-![自由配置角色和权限](https://github.com/winlion/restgo-admin/blob/master/asset/images/3.png)
-![支持系统自定义参数](https://github.com/winlion/restgo-admin/blob/master/asset/images/4.png)
+![登录页面](https://github.com/hikerwu/restgo-admin/blob/master/asset/images/1.png)
+![登入首页](https://github.com/hikerwu/restgo-admin/blob/master/asset/images/2.png)
+![自由配置角色和权限](https://github.com/hikerwu/restgo-admin/blob/master/asset/images/3.png)
+![支持系统自定义参数](https://github.com/hikerwu/restgo-admin/blob/master/asset/images/4.png)
 # 2、如何使用
 ## 2.1、使用如下指令克隆
 ```
@@ -17,10 +17,12 @@ go run  main.go
 ```
 
 ## 2.2、数据库
-新建数据库名称为restgo-admin,编码为utf-8  
-将restgo-admin.sql导入到数据库中   
+create database `restgo-admin`; // 新建数据库名称为restgo-admin,编码为utf-8  
+mysql -uroot restgo-admin < restgo-admin.sql # 将restgo-admin.sql导入到数据库中   
+GRANT ALL PRIVILEGES ON *.* TO 'hikerwu'@'%' IDENTIFIED BY '12345678' WITH GRANT OPTION; # 添加自己的账号和密码;
+flush privileges; # 刷新
 修改conf/app.properties文件24行数据库配置   
-restgo.datasource.default.dataSourceName=root:root@/restgo-admin?charset=utf8  
+restgo.datasource.default.dataSourceName=hikerwu:12345678@/restgo-admin?charset=utf8  
 数据库配置方式有如下几种,详细请自行百度。       
 一定要修改一个的数据库账号。
 
@@ -29,7 +31,7 @@ user@unix(/path/to/socket)/dbname?charset=utf8
 user:password@tcp(localhost:5555)/dbname?charset=utf8
 user:password@/dbname
 user:password@tcp([de:ad:be:ef::ca:fe]:80)/dbname
-user:12345678@/restgo-admin?charset=utf8
+hikerwu:12345678@/restgo-admin?charset=utf8
 ```
 ## 2.3、初始化依赖包
 使用前先使用如下指令安装指令安装文件
@@ -82,5 +84,6 @@ go get github.com/derekparker/delve/cmd/dlv
 https://www.cnblogs.com/Leo_wl/p/8242628.html
 
 ## 3.2 如何联系我
-我的微信 jiepool-winlion  
-我的qq 271151388
+我的微信 hikerwu
+( 原作者:微信 jiepool-winlion  qq 271151388)
+
